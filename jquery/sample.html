@@ -1,0 +1,76 @@
+<html>
+<head>
+<title>Jquery Registration page validation</title>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js">
+</script>
+<script src="js/form-validation.js"></script>
+<script type="text/javascript">
+$(function() {
+  
+  $("form[name='registration']").validate({
+    
+    rules: {
+      
+      name: "required",
+      phone: "required",
+      address: "required",
+      email: {
+        required: true,
+       
+        email: true
+      },
+      password: {
+        required: true,
+        minlength: 5
+      }
+    },
+    
+    messages: {
+      name: "Please enter your firstname",
+      phone: "Please enter your lastname",
+      address: "please enter your address",
+      password: {
+        required: "Please provide a password",
+        minlength: "Your password must be at least 5 characters long"
+      },
+      email: "Please enter a valid email address"
+    },
+   
+    submitHandler: function(form) {
+      form.submit();
+    }
+  });
+});
+</script>
+</head>
+<body>
+
+<form method="post" action=""  name="registration">
+
+<label id="dis" style="width:250px;"></label><br>
+<div id="name">Username:</div>
+<input type="text" name="name" id="name" />
+<p style="color:red" id='fname'></p>   <br />
+
+<div id="email">Email:</div>
+<input type="text" name="email" id="email" />
+<p style="color:red" id='femail'></p>   <br />
+
+<div id="phone">Phone:</div>
+<input type="text" name="phone" id="phone" />
+<p style="color:red" id='fphone'></p>   <br />
+
+<div id="address">Email:</div>
+<input type="text" name="address" id="address">
+<p style="color:red" id='faddress'></p>   <br />
+
+<div id="password">password:</div>
+<input type="password" name="password" id="password">
+<p style="color:red" id='fpassword'></p>    
+
+<br/>
+<input type="submit" name="submit" id="submit" />
+</form>
+
+</body>
+</html>

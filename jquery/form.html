@@ -1,0 +1,72 @@
+
+
+<html>
+<head>
+
+</head>
+<body>
+<form name="myForm" method="post">
+<div>
+    <label>Name</label>
+    <input type="text" id="fname"></br>
+       
+</div>
+
+<div>
+    <label>Email</label>
+    <input type="text" id="femail"></br>
+       
+</div>
+
+<div>
+    <label>Password</label>
+    <input type="password" id="fpassword"></br>
+        
+</div>
+
+<div>
+    <label>Phone</label>
+    <input type="text" id="fphone"></br>
+        
+</div>
+
+<div>
+    <label>Address</label>
+    <input type="text" id="faddress"></br>
+       
+</div>
+<input type="submit" value="submit" id="submit"></br>
+</form>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+	$("#submit").click(function(){
+	if ($("#fname").val() =="")
+		$("#fname").below("name should be filled");
+		return false
+	if$("#femail").val()==""
+		$("#femail").after("email should be filled");
+		return false
+	if$("#fphone").val()==""
+		$("#fphone").after("phone number should be filled");
+		return false
+	if$("#faddress").val()==""
+		$("#faddress").after("address should be filled");
+		return false
+	if$("#fpassword").val()==""
+		$("#fpassword").after("password should be filled");
+		return false
+	else{
+		return true
+	
+	
+	
+});
+});
+
+</script>
+
+</body>
+</html>
