@@ -1,0 +1,71 @@
+<html>
+<head><script>
+function Submit(){
+ var emailRegex = /^[A-Za-z0-9._]*\@[A-Za-z]*\.[A-Za-z]{2,5}$/;
+ var name = document.form.name.value,
+  femail = document.form.email.value,
+  faddress = document.form.address.value,
+  fpassword = document.form.Password.value,
+  fphone = document.form.phone.value,
+  
+   
+ if( name == "" )
+   {
+     document.form.name.focus() ;
+  document.getElementById("errorBox").innerHTML = "enter the first name";
+     return false;
+   }
+ 
+    
+   if (femail == "" )
+ {
+  document.form.email.focus();
+  document.getElementById("errorBox").innerHTML = "enter the email";
+  return false;
+  }else if(!emailRegex.test(femail)){
+  document.form.email.focus();
+  document.getElementById("errorBox").innerHTML = "enter the valid email";
+  return false;
+  }
+   
+ 
+   
+   
+ if(fpassword == "")
+  {
+   document.form.Password.focus();
+   document.getElementById("errorBox").innerHTML = "enter the password";
+   return false;
+  }
+   
+   if (faddress == "") {
+        document.form.address.focus();
+  document.getElementById("errorBox").innerHTML = "enter the address";
+        return false;
+     }
+  if (fphone == "") {
+        document.form.birthday_day.focus();
+  document.getElementById("errorBox").innerHTML = "please enter phone number";
+        return false;
+     }
+if(name != '' && femail != '' && fpassword != '' && fphone != '' && faddress != ''){
+   document.getElementById("errorBox").innerHTML = "form submitted successfully";
+   }
+
+  
+     
+}
+</script>
+</head>
+<body>
+<form name="myForm" action="form2.html" onsubmit="return submit()" method="post">
+Name: <input type="text" name="name"><br/></br>  
+email: <input type="text" name="email"><br/></br> 
+phone: <input type="text" name="phone"><br/></br>
+address: <input type="text" name="address"><br/></br>
+Password: <input type="password" name="password"><br/></br>
+ 
+<input type="button" value="submit"> 
+</body>
+</html>
+
